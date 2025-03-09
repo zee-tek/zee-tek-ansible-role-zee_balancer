@@ -12,8 +12,13 @@
     src: haproxy.cfg.j2
     dest: /etc/haproxy/haproxy.cfg
 
-- name: assign ownership
-  shell: chown -R haproxy:haproxy /run/haproxy/;chmod 755 /run/haproxy/
+- name: Create /run/haproxy
+  file:
+    path: /run/haproxy
+    state: directory
+    owner: haproxy
+    group: haproxy
+    mode: 755
 
 - name: Enable and start haproxy
   service:
