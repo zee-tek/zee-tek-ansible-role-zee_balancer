@@ -30,6 +30,6 @@ frontend http_in
 
 backend servers
     mode http
-    server serverb.example.com 192.168.1.90:80 check
-    server serverc.example.com 192.168.1.91:80 check
+    server {{server1_name}} {{server1_ip}}:80 check
+    server {{server2_name}} {{server2_ip}}:80 check
 
