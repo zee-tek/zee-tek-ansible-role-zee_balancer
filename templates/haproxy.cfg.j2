@@ -31,5 +31,5 @@ frontend http_in
 backend servers
     mode http
 {% for server in backend_servers %}
-    server {{ server.name }} {{ server.address }} check
+    server {{ server.name }} {{ server.address }}:80 check
 {% endfor %}
